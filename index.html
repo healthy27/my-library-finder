@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>우리 동네 도서관 찾기</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>우리 동네 도서관 찾기</h1>
+            <nav>
+                <a href="#">홈</a>
+                <a href="#">자기소개</a>
+            </nav>
+        </header>
+
+        <section class="search-area">
+            <input type="text" id="searchInput" placeholder="지역명 또는 도서관 이름으로 검색">
+            <button id="searchButton">검색</button>
+            <button id="myLocationButton">내 위치에서 찾기</button>
+        </section>
+
+        <section id="libraryList" class="library-list">
+            <!-- 도서관 카드가 여기에 표시됩니다 -->
+        </section>
+
+        <footer>
+            © 2025 당신의 이름. All rights reserved.
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

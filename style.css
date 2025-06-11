@@ -1,0 +1,274 @@
+/* style.css */
+
+/* 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif; /* 폰트 설정 */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* 부드러운 배경색 */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* 전체 웹페이지 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    background-color: #ffffff; /* 컨테이너 배경색 */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    overflow: hidden; /* 내부 요소가 넘치지 않도록 */
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #2c3e50; /* 어두운 남색 계열 */
+    color: white;
+    padding: 1.5rem 20px;
+    text-align: center;
+    border-bottom: 5px solid #3498db; /* 강조 라인 */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px; /* 글자 간격 */
+}
+
+/* 내비게이션 스타일 */
+nav {
+    margin-top: 15px;
+    display: flex; /* 가로 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 20px; /* 메뉴 항목 간 간격 */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #34495e; /* 호버 시 배경색 */
+    transform: translateY(-2px); /* 약간 위로 떠오르는 효과 */
+}
+
+/* 검색 영역 스타일 */
+.search-area {
+    padding: 30px 20px;
+    background-color: #ecf0f1; /* 밝은 회색 배경 */
+    display: flex;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+    gap: 10px; /* 요소 간 간격 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-area input[type="text"] {
+    flex-grow: 1; /* 최대한 공간 차지 */
+    max-width: 400px;
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 25px; /* 둥근 입력 필드 */
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-area input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+.search-area button {
+    padding: 12px 25px;
+    background-color: #3498db; /* 파란색 버튼 */
+    color: white;
+    border: none;
+    border-radius: 25px; /* 둥근 버튼 */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* 버튼 텍스트 줄바꿈 방지 */
+}
+
+.search-area button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* 도서관 목록 스타일 */
+.library-list {
+    padding: 20px;
+    display: grid; /* 그리드 레이아웃 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 반응형 그리드 */
+    gap: 25px; /* 카드 간 간격 */
+}
+
+.library-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* 더 깊은 그림자 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용 균등 분배 */
+}
+
+.library-card:hover {
+    transform: translateY(-5px); /* 호버 시 약간 떠오름 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 더 강한 그림자 */
+}
+
+.library-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.library-card p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.library-card p strong {
+    color: #2c3e50;
+}
+
+.library-card a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block; /* 링크 버튼처럼 보이게 */
+    transition: color 0.3s ease;
+}
+
+.library-card a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 20px;
+    font-size: 0.9rem;
+    border-top: 5px solid #3498db;
+}
+
+/* 자기소개 페이지 (about.html) 전용 스타일 (옵션) */
+/* 만약 about.html 에 별도의 class나 id를 준다면 여기에 추가할 수 있습니다. */
+.about-me-content {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 5px solid #3498db;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-me-content p {
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* 반응형 웹 디자인 (미디어 쿼리) */
+
+/* 768px 이하 화면 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column; /* 세로 정렬 */
+        gap: 10px;
+    }
+
+    nav a {
+        width: 80%; /* 버튼 너비 조절 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
+
+    .search-area {
+        flex-direction: column; /* 세로 정렬 */
+        padding: 20px;
+    }
+
+    .search-area input[type="text"] {
+        max-width: 100%; /* 전체 너비 사용 */
+    }
+
+    .search-area button {
+        width: 100%; /* 버튼 전체 너비 */
+    }
+
+    .library-list {
+        grid-template-columns: 1fr; /* 한 줄에 하나의 카드만 */
+        padding: 15px;
+    }
+
+    .library-card {
+        padding: 15px;
+    }
+
+    .about-me-content {
+        padding: 20px;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* 480px 이하 화면 */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .search-area input[type="text"],
+    .search-area button {
+        font-size: 0.9rem;
+    }
+
+    .library-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .library-card p {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        padding: 1rem 10px;
+        font-size: 0.8rem;
+    }
+}

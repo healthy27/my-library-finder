@@ -1,35 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>우리 동네 도서관 찾기</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <title>우리 동네 도서관 찾기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>우리 동네 도서관 찾기</h1>
-            <nav>
-                <a href="#">홈</a>
-            </nav>
-        </header>
+  <header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <h1 class="fs-3">우리 동네 도서관 찾기</h1>
+    </div>
+  </header>
 
-        <section class="search-area">
-            <input type="text" id="searchInput" placeholder="지역명 또는 도서관 이름으로 검색">
-            <button id="searchButton">검색</button>
-            <button id="myLocationButton">내 위치에서 찾기</button>
-        </section>
+  <main class="container my-4">
+    <!-- 인기 도서관 영역 -->
+    <section class="mb-5">
+      <h2 class="mb-3 border-bottom pb-2">📚 인기 도서관</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">의정부 미술도서관</h5>
+              <p class="card-text">경기도 의정부시 의정부동에 위치한 특화 미술 도서관입니다.</p>
+              <a href="https://www.uilib.go.kr/art/" target="_blank" class="btn btn-primary">홈페이지</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">국립중앙도서관</h5>
+              <p class="card-text">대한민국을 대표하는 국가도서관으로 방대한 자료를 보유하고 있습니다.</p>
+              <a href="https://www.nl.go.kr/" target="_blank" class="btn btn-primary">홈페이지</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="libraryList" class="library-list">
-            <!-- 도서관 카드가 여기에 표시됩니다 -->
-        </section>
+    <!-- 검색 영역 -->
+    <section class="mb-4">
+      <div class="input-group">
+        <input type="text" id="searchInput" class="form-control" placeholder="지역명 또는 도서관 이름으로 검색">
+        <button id="searchButton" class="btn btn-outline-primary">검색</button>
+      </div>
+    </section>
 
-        <footer>
-            © 2025 당신의 이름. All rights reserved.
-        </footer>
+    <!-- 정렬 옵션 -->
+    <div class="d-flex justify-content-end align-items-center mb-2">
+      <label class="me-2">정렬:</label>
+      <select id="sortOption" class="form-select w-auto">
+        <option value="">선택 없음</option>
+        <option value="name">도서관명 (가나다순)</option>
+        <option value="source">출처</option>
+      </select>
     </div>
 
-    <script src="script.js"></script>
+    <!-- 결과 수 -->
+    <p class="text-muted">🔎 검색 결과: <span id="resultCount">0</span>건</p>
+
+    <!-- 도서관 리스트 영역 -->
+    <section id="libraryList" class="row g-3">
+      <!-- script.js에서 동적으로 렌더링 -->
+    </section>
+  </main>
+
+  <footer class="py-4 bg-light text-center border-top">
+    <div class="container">
+      <span class="text-muted">© 2025 나의 도서관 프로젝트</span>
+    </div>
+  </footer>
 </body>
 </html>
